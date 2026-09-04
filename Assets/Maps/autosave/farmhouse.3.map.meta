@@ -1,0 +1,37 @@
+fileFormatVersion: 2
+guid: bbadd38ab56052a438de399977a8625a
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: d48643f8271fb495288ef9750a1590a0, type: 3}
+  inverseScale: 16
+  extractPath: Assets/textures
+  extractFromWAD: 0
+  solidImporter:
+    inverseScale: 16
+    lightmapTexelSize: 1
+    lightmapUVPackMargin: 1.5
+    clipTextureName: clip
+    skipTextureName: skip
+    textureFolder: Assets/textures
+    palette: {instanceID: 0}
+    wadFiles: []
+    defaultSolid: {instanceID: 0}
+    alphaCutout: {instanceID: 0}
+    materialOverrideFolder: Assets/Materials
+    BaseColorShaderParam: _MainTex
+    defaultSolidPrefab: {instanceID: 0}
+    defaultTriggerPrefab: {instanceID: 0}
+    solidEntities: []
+  pointImporter:
+    inverseScale: 16
+    pointEntities: []
+    importLights: 0
+  warnTexturesReimported: 0
+  warnTexturesMissing: 0
+  mapPath: 
+  importByTextureConversion: 0

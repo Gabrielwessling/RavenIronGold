@@ -1,0 +1,41 @@
+fileFormatVersion: 2
+guid: 5639d78ca4018264c96026753ea108f1
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: d48643f8271fb495288ef9750a1590a0, type: 3}
+  inverseScale: 16
+  extractPath: Assets/Textures
+  extractFromWAD: 0
+  solidImporter:
+    inverseScale: 16
+    lightmapTexelSize: 1
+    lightmapUVPackMargin: 1.5
+    clipTextureName: clip
+    skipTextureName: skip
+    textureFolder: Assets/textures
+    palette: {fileID: -1250785782694107512, guid: 6d5c748c1288247929d3fd5b91a71311, type: 3}
+    wadFiles: []
+    defaultSolid: {fileID: 2100000, guid: 6734b60aa8efd433695e2063320b53a2, type: 2}
+    alphaCutout: {fileID: 2100000, guid: 59e74cd1d193341d9b04292684a1c0e7, type: 2}
+    materialOverrideFolder: Assets/Materials
+    BaseColorShaderParam: _BaseMap
+    defaultSolidPrefab: {fileID: 6748744249050184235, guid: bbc0f70176c4e48f6a1beabe3d86383c, type: 3}
+    defaultTriggerPrefab: {fileID: 6748744249050184235, guid: 4e85cfa90079b46d9b89abf90f8bd885, type: 3}
+    solidEntities:
+    - className: worldspawn
+      prefab: {instanceID: 0}
+    - className: func_group
+      prefab: {instanceID: 0}
+  pointImporter:
+    inverseScale: 16
+    pointEntities: []
+    importLights: 1
+  warnTexturesReimported: 0
+  warnTexturesMissing: 1
+  mapPath: Assets/Maps/farmhouse.map
+  importByTextureConversion: 0

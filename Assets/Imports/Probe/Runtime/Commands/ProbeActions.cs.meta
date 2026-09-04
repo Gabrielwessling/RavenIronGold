@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: d8e08939e1ba94476af359a2288d519f
+AssetOrigin:
+  serializedVersion: 1
+  productId: 384830
+  packageName: "Probe \u2014 Zero-Setup Runtime Tuning Console"
+  packageVersion: 1.0.2
+  assetPath: Assets/Probe/Runtime/Commands/ProbeActions.cs
+  uploadId: 959108

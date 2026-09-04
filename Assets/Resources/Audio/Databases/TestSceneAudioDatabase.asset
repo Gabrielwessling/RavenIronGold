@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c229eaad9fb1a747906c902847ad61d, type: 3}
+  m_Name: TestSceneAudioDatabase
+  m_EditorClassIdentifier: Assembly-CSharp::AudioDatabase
+  sceneName: TestScene
+  entries:
+  - clip: {fileID: 8300000, guid: 8454d5df2bee1ca4c917e6eaaa6f95a6, type: 3}
+    volume: 0.759
+  - clip: {fileID: 8300000, guid: 27b9d5106fa08bc4b9287eec8c0cbfd0, type: 3}
+    volume: 0.647
+  - clip: {fileID: 8300000, guid: 24b7184611e5dbb48bcb7019b2d41152, type: 3}
+    volume: 0.845
+  - clip: {fileID: 8300000, guid: 4eb7414380907ab47bbc026f816bab98, type: 3}
+    volume: 0.75

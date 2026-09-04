@@ -1,0 +1,47 @@
+{
+    "audio": {
+        "master": 1.0,
+        "music": 0.8,
+        "sfx": 1.0
+    },
+    "graphics": {
+        "fullscreen": true,
+        "resolution": {
+            "width": 1920,
+            "height": 1080
+        },
+        "fullscreenStyle": "borderless",
+        "graphicsQuality": 3
+    },
+    "controls": {
+        "keyboard": {
+            "moveForward": "W",
+            "moveBackward": "S",
+            "moveLeft": "A",
+            "moveRight": "D",
+            "jump": "Space",
+            "interact": "E",
+            "pause": "Escape",
+            "sprint": "LeftShift",
+            "crouch": "LeftControl"
+        },
+        "mouse": {
+            "sensitivity": 1.0,
+            "invertYAxis": false
+        }
+    },
+    "language": {
+        "selected": "pt-BR",
+        "available": [
+            "en-US",
+            "pt-BR"
+        ]
+    },
+    "gameplay": {
+        "difficultyLevel": 3,
+        "autoSave": true,
+        "hints": true,
+        "showSubtitles": true,
+        "autoSaveInterval": 10
+    }
+}

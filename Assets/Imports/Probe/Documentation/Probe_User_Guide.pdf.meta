@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 3cb0e5f8a969493ba2693e14007528a4
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 384830
+  packageName: "Probe \u2014 Zero-Setup Runtime Tuning Console"
+  packageVersion: 1.0.2
+  assetPath: Assets/Probe/Documentation/Probe_User_Guide.pdf
+  uploadId: 959108
