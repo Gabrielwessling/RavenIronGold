@@ -1,0 +1,6 @@
+Version 0.0.1
+
+- Updated the hierarchy styling editor tool to use Unity's EntityId-based hierarchy callback and object lookup APIs.
+- Resolved obsolete Unity editor API compiler errors in StyleHierarchy.cs.
+
+Commit message: Fix obsolete Unity hierarchy editor APIs
