@@ -29,4 +29,9 @@ public class WeaponAmmo : MonoBehaviour
         currentAmmo--;
         return true;
     }
+
+    public void RefillMagazine()
+    {
+        currentAmmo = MagazineSize;
+    }
 }

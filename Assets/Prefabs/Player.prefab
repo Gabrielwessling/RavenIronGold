@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 8353661749527253267}
   - component: {fileID: 6529021286964462169}
   - component: {fileID: 3336985043660310884}
-  - component: {fileID: 1388494327165574592}
   - component: {fileID: 8010864999032026195}
   m_Layer: 0
   m_Name: Player
@@ -102,19 +101,6 @@ MonoBehaviour:
     MaxSpeed: 1
     Acceleration: 50
     Deceleration: 50
---- !u!114 &1388494327165574592
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1461853101703940479}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56a75dc49fa305c4d87d2854fe203452, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_RefreshRate: 4
 --- !u!114 &8010864999032026195
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -127,13 +113,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c33225e376a6eff46b12dd368d34db94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactor
-  m_Camera: {fileID: 4930071828124629266}
-  m_InputActions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
-  m_InteractionManager: {fileID: 0}
-  m_InteractionDistance: 3
-  m_InteractableLayers:
+  camera: {fileID: 0}
+  inputActions: {fileID: 0}
+  interactionManager: {fileID: 0}
+  animator: {fileID: 0}
+  interactTriggerName: Interact
+  interactionDistance: 3
+  interactableLayers:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 4294967295
 --- !u!1 &3716382280641831873
 GameObject:
   m_ObjectHideFlags: 0

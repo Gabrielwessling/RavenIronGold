@@ -1,3 +1,17 @@
+Changelog Rules
+
+- Separate every set of changes under its own version heading.
+- List each change as a concise bullet point under its version.
+- End each version section with a `Commit message:` line describing the commit.
+
+Version 0.0.2
+
+- Added weapon firing and reload timing with state validation.
+- Added magazine refill behavior when reloading completes.
+- Added Input System bindings for firing and reloading.
+
+Commit message: Add weapon firing and reload system
+
 Version 0.0.1
 
 - Updated the hierarchy styling editor tool to use Unity's EntityId-based hierarchy callback and object lookup APIs.
