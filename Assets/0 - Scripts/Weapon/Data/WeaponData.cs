@@ -21,4 +21,7 @@ public class WeaponData : ScriptableObject
 
     [Header("Reload")]
     public float reloadTime = 2f;
+    
+    [Header("Hit Detection")]
+    public LayerMask hitMask = ~0;
 }
