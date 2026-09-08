@@ -1,8 +1,18 @@
-Changelog Rules
+## Changelog Rules
+    Separate every set of changes under its own version heading.
+    List each change as a concise bullet point under its version.
+    End each version section with a `Commit message:` line describing the commit.
 
-- Separate every set of changes under its own version heading.
-- List each change as a concise bullet point under its version.
-- End each version section with a `Commit message:` line describing the commit.
+## Changelog
+Version 0.0.3
+
+- Added weapon debug HUD output for state, ammunition, and fire/reload timers with configurable text scaling.
+- Added weapon enable and disable state controls and tightened reload validation to only allow reloads from the ready state.
+- Added firing animation transitions and configured weapon model muzzle and eject points in the test scene.
+- Reduced the N66 reload time from 3 seconds to 2 seconds.
+- Updated the test scene weapon presentation and regenerated its lighting and reflection data.
+
+Commit message: Improve weapon debugging, animation, and scene setup
 
 Version 0.0.2
 

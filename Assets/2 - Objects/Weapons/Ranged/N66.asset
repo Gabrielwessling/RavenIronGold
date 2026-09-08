@@ -13,11 +13,10 @@ MonoBehaviour:
   m_Name: N66
   m_EditorClassIdentifier: Assembly-CSharp::WeaponData
   weaponName: N66
-  weaponDescription: Old-war Pistol used by Cloggs because of it's manufacturing
-    cost.
+  weaponDescription: Old-war Pistol prefered by Cloggs for it's manufacturing cost.
   fireMode: 0
   damage: 15
   fireRate: 3
   range: 100
   magazineSize: 11
-  reloadTime: 3
+  reloadTime: 2
