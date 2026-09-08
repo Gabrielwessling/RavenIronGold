@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -34,8 +34,24 @@ namespace Q3Movement
         public void LookRotation(Transform character, Transform camera)
         {
             Vector2 lookInput = m_LookAction.ReadValue<Vector2>();
-            float yRot = lookInput.x * m_XSensitivity;
-            float xRot = lookInput.y * m_YSensitivity;
+
+            float sensitivity = 1f;
+            bool invertYAxis = false;
+
+            if (SettingsManager.Instance != null &&
+                SettingsManager.Instance.Settings != null)
+            {
+                sensitivity = SettingsManager.Instance.Settings.controls.mouse.sensitivity;
+                invertYAxis = SettingsManager.Instance.Settings.controls.mouse.invertYAxis;
+            }
+
+            float yRot = lookInput.x * m_XSensitivity * sensitivity;
+            float xRot = lookInput.y * m_YSensitivity * sensitivity;
+
+            if (invertYAxis)
+            {
+                xRot *= -1f;
+            }
 
             m_CharacterTargetRot *= Quaternion.Euler(0f, yRot, 0f);
             m_CameraTargetRot *= Quaternion.Euler(-xRot, 0f, 0f);

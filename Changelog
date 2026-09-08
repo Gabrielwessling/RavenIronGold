@@ -4,6 +4,16 @@
     End each version section with a `Commit message:` line describing the commit.
 
 ## Changelog
+Version 0.0.4
+
+- Added weapon hit-detection layer mask support in the weapon data asset so shots can target specific layers.
+- Extended the weapon controller with aim-point lookup, hitscan raycast execution, camera/fire-point references, and optional debug ray visualization.
+- Wired mouse-look sensitivity and inverted Y-axis reading through the settings manager rather than using a fixed look multiplier.
+- Hardened the Quake-style air-control routine by normalizing horizontal velocity before steering and checking zero-speed cases safely.
+- Added the ProBuilder package dependency into the Unity package manifest and lock file.
+
+Commit message: Add weapon hitscan and movement configuration hooks
+
 Version 0.0.3
 
 - Added weapon debug HUD output for state, ammunition, and fire/reload timers with configurable text scaling.

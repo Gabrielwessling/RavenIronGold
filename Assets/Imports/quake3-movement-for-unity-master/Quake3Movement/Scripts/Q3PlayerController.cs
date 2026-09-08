@@ -195,35 +195,38 @@ namespace Q3Movement
         private void AirControl(Vector3 targetDir, float targetSpeed)
         {
             // Only control air movement when moving forward or backward.
-            if (Mathf.Abs(m_MoveInput.z) < 0.001 || Mathf.Abs(targetSpeed) < 0.001)
+            if (Mathf.Abs(m_MoveInput.z) < 0.001f || Mathf.Abs(targetSpeed) < 0.001f)
             {
                 return;
             }
 
-            float zSpeed = m_PlayerVelocity.y;
-            m_PlayerVelocity.y = 0;
-            /* Next two lines are equivalent to idTech's VectorNormalize() */
-            float speed = m_PlayerVelocity.magnitude;
-            m_PlayerVelocity.Normalize();
+            Vector3 horizontalVelocity = m_PlayerVelocity;
+            horizontalVelocity.y = 0f;
 
-            float dot = Vector3.Dot(m_PlayerVelocity, targetDir);
-            float k = 32;
-            k *= m_AirControl * dot * dot * Time.deltaTime;
-
-            // Change direction while slowing down.
-            if (dot > 0)
+            float speed = horizontalVelocity.magnitude;
+            if (speed < 0.001f)
             {
-                m_PlayerVelocity.x *= speed + targetDir.x * k;
-                m_PlayerVelocity.y *= speed + targetDir.y * k;
-                m_PlayerVelocity.z *= speed + targetDir.z * k;
-
-                m_PlayerVelocity.Normalize();
-                m_MoveDirectionNorm = m_PlayerVelocity;
+                return;
             }
 
-            m_PlayerVelocity.x *= speed;
-            m_PlayerVelocity.y = zSpeed; // Note this line
-            m_PlayerVelocity.z *= speed;
+            Vector3 horizontalDir = horizontalVelocity / speed;
+            float dot = Vector3.Dot(horizontalDir, targetDir);
+            if (dot <= 0f)
+            {
+                return;
+            }
+
+            float k = 32f * m_AirControl * dot * dot * Time.deltaTime;
+            k = Mathf.Clamp01(k);
+
+            // Smoothly steer the existing horizontal velocity toward the current
+            // target direction while keeping the vertical velocity untouched.
+            Vector3 correctedDirection = Vector3.Lerp(horizontalDir, targetDir, k);
+            correctedDirection.Normalize();
+
+            m_PlayerVelocity.x = correctedDirection.x * speed;
+            m_PlayerVelocity.z = correctedDirection.z * speed;
+            m_MoveDirectionNorm = correctedDirection;
         }
 
         // Handle ground movement.
