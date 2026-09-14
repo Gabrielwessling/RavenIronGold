@@ -4,6 +4,15 @@
     End each version section with a `Commit message:` line describing the commit.
 
 ## Changelog
+Version 0.0.5
+
+- Added impact and hit-zone data models for weapon hits, including an enum-driven impact type list and object/zone metadata to describe the target surface and region.
+- Added health, damage, impact-surface, and hit-zone runtime components so weapon hits can resolve damage through targetable body zones and impact effects.
+- Extended the weapon hit packet and controller to carry the hit point, surface normal, hit object, hit zone, damage value, and impact surface classification for each hitscan result.
+- Updated the test scene and project settings after saving the latest weapon-damage and scene configuration work.
+
+Commit message: Add hit-zone, impact, and damage resolution scaffolding
+
 Version 0.0.4
 
 - Added weapon hit-detection layer mask support in the weapon data asset so shots can target specific layers.

@@ -18,5 +18,8 @@ MonoBehaviour:
   damage: 15
   fireRate: 3
   range: 100
-  magazineSize: 11
+  magazineSize: 6
   reloadTime: 2
+  hitMask:
+    serializedVersion: 2
+    m_Bits: 384
