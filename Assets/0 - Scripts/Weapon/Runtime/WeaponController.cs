@@ -18,14 +18,15 @@ public class WeaponController : MonoBehaviour
     [SerializeField] private Camera playerCamera;
     public Camera PlayerCamera => playerCamera;
 
+    private WeaponHit lastHit;
+    public WeaponHit LastHit => lastHit;
+
     [Header("Timers")]
     private float fireTimer;
     private float reloadTimer;
 
     [Header("Debug")]
     [SerializeField] private bool showDebugInfo = true;
-
-    [SerializeField] private WeaponDebugScale debugScale = WeaponDebugScale.Normal;
     public float FireTimer => fireTimer;
     public float ReloadTimer => reloadTimer;
     public bool ShowDebugRay = false;
@@ -104,7 +105,7 @@ public class WeaponController : MonoBehaviour
         if (!weaponAmmo.TryConsumeAmmo())
             return false;
 
-        PerformHitscan();
+        lastHit = PerformHitscan();
 
         fireTimer = 1f / weaponData.fireRate;
 
@@ -165,7 +166,7 @@ public class WeaponController : MonoBehaviour
 
         GUIStyle style = new GUIStyle(GUI.skin.label)
         {
-            fontSize = GetDebugFontSize()
+            fontSize = DebugSettingsHelper.FontSize
         };
 
         float lineHeight = style.fontSize + 8f;
@@ -193,22 +194,26 @@ public class WeaponController : MonoBehaviour
             $"Reload Timer: {reloadTimer:F2}",
             style
         );
+
+        GUI.Label(
+            new Rect(10, 10 + lineHeight * 4, 500, lineHeight),
+            $"Hit: {LastHit.Hit}",
+            style
+        );
+
+        GUI.Label(
+            new Rect(10, 10 + lineHeight * 5, 500, lineHeight),
+            $"Hit Object: {(LastHit.HitObject != null ? LastHit.HitObject.name : "None")}",
+            style
+        );
     }
-    private int GetDebugFontSize()
+
+    private WeaponHit PerformHitscan()
     {
-        return debugScale switch
-        {
-            WeaponDebugScale.Small => 18,
-            WeaponDebugScale.Normal => 24,
-            WeaponDebugScale.Large => 32,
-            WeaponDebugScale.ExtraLarge => 36,
-            _ => 24
-        };
-    }
-    private void PerformHitscan()
-    {
+        WeaponHit weaponHit = new WeaponHit();
+
         if (!TryGetAimPoint(out Vector3 aimPoint))
-            return;
+            return weaponHit;
 
         Vector3 fireDirection = GetFireDirection(aimPoint);
 
@@ -220,6 +225,42 @@ public class WeaponController : MonoBehaviour
             weaponData.hitMask
         ))
         {
+            weaponHit.Hit = true;
+            weaponHit.Point = hit.point;
+            weaponHit.Normal = hit.normal;
+            weaponHit.HitObject = hit.collider.gameObject;
+            HitZoneComponent hitZoneComponent = hit.collider.GetComponent<HitZoneComponent>();
+
+            if (hitZoneComponent != null)
+            {
+                weaponHit.HitZone = hitZoneComponent.HitZone;
+            }
+            else
+            {
+                weaponHit.HitZone = HitZone.Default;
+            }
+
+            ImpactSurface impactSurface = hit.collider.GetComponent<ImpactSurface>();
+
+            if (impactSurface != null)
+            {
+                weaponHit.ImpactType = impactSurface.ImpactType;
+            }
+            else
+            {
+                weaponHit.ImpactType = ImpactType.Default;
+            }
+
+            weaponHit.Damage = weaponData.damage;
+
+            IDamageable damageable = hit.collider.GetComponentInParent<IDamageable>();
+            Debug.Log($"Hit object: {hit.collider.gameObject.name}, Damageable: {damageable?.GetType().Name ?? "None"}");
+
+            if (damageable != null)
+            {
+                damageable.TakeDamage(weaponHit.Damage, weaponHit.HitZone);
+            }
+
             if (ShowDebugRay)
             {
                 Debug.DrawLine(
@@ -233,21 +274,23 @@ public class WeaponController : MonoBehaviour
                     hit.point,
                     hit.normal * 1f,
                     Color.cadetBlue,
-                    DebugRayDuration*2
+                    DebugRayDuration * 2
                 );
             }
+
+            return weaponHit;
         }
-        else
+
+        if (ShowDebugRay)
         {
-            if (ShowDebugRay)
-            {
-                Debug.DrawRay(
-                    firePoint.position,
-                    fireDirection * weaponData.range,
-                    Color.red,
-                    DebugRayDuration
-                );
-            }
+            Debug.DrawRay(
+                firePoint.position,
+                fireDirection * weaponData.range,
+                Color.red,
+                DebugRayDuration
+            );
         }
+
+        return weaponHit;
     }
 }

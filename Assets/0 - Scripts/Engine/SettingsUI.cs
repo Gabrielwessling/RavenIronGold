@@ -39,6 +39,9 @@ public class SettingsUI : MonoBehaviour
     [SerializeField] private KeyBindingButton keyBindingPrefab;
     [SerializeField] private Transform keyBindingContainer;
 
+    [Header("Debug")]
+    [SerializeField] private TMP_Dropdown debugScale;
+
     private GameSettings temporarySettings;
 
     private readonly List<KeyBindingButton> keyBindingButtons =
@@ -80,6 +83,7 @@ public class SettingsUI : MonoBehaviour
         SetupGraphicsQualityDropdown();
         SetupLanguageDropdown();
         SetupDifficultyDropdown();
+        SetupDebugScaleDropdown();
     }
 
 
@@ -177,6 +181,21 @@ public class SettingsUI : MonoBehaviour
         );
     }
 
+    private void SetupDebugScaleDropdown()
+    {
+        debugScale.ClearOptions();
+
+        debugScale.AddOptions(
+            new List<string>
+            {
+                "Small",
+                "Normal",
+                "Large",
+                "Extra Large"
+            }
+        );
+    }
+
 
     private void LoadSettingsIntoUI()
     {
@@ -258,6 +277,9 @@ public class SettingsUI : MonoBehaviour
             settings.gameplay.autoSaveInterval
         );
 
+        debugScale.SetValueWithoutNotify(
+            temporarySettings.debug.debugScale
+        );
 
         RefreshKeyBindings();
     }
@@ -330,14 +352,15 @@ public class SettingsUI : MonoBehaviour
                 autoSaveInterval.value
             );
 
-
         SettingsManager.Instance.ApplySettings(
             temporarySettings
         );
 
-
         temporarySettings =
             SettingsManager.Instance.Settings.Clone();
+
+        temporarySettings.debug.debugScale =
+            debugScale.value;
     }
 
 

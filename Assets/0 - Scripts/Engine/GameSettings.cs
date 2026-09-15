@@ -9,6 +9,7 @@ public class GameSettings
     public ControlsSettings controls = new();
     public LanguageSettings language = new();
     public GameplaySettings gameplay = new();
+    public DebugSettings debug = new();
 
     public GameSettings Clone()
     {
@@ -94,4 +95,10 @@ public class GameplaySettings
     public bool hints = true;
     public bool showSubtitles = true;
     public int autoSaveInterval = 10;
+}
+
+[Serializable]
+public class DebugSettings
+{
+    public int debugScale = 1;
 }
