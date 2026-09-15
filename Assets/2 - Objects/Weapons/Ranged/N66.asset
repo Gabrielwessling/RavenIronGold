@@ -14,12 +14,42 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::WeaponData
   weaponName: N66
   weaponDescription: Old-war Pistol prefered by Cloggs for it's manufacturing cost.
-  fireMode: 0
+  fireMode: 1
+  burstCount: 3
   damage: 15
-  fireRate: 3
+  fireRate: 10
   range: 100
-  magazineSize: 6
-  reloadTime: 2
+  recoilVertical: 0.5
+  recoilHorizontal: 1
+  recoilBack: 0.05
+  maxRecoil: 20
+  recoilRecovery: 20
+  recoilDamping:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: -0.1576326
+      outSlope: -0.1576326
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.32457644
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  magazineSize: 200
+  reloadTime: 1
   hitMask:
     serializedVersion: 2
-    m_Bits: 384
+    m_Bits: 448

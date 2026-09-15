@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6759137205357613581}
   - component: {fileID: 8150670113299008560}
   - component: {fileID: 528605398469441234}
+  - component: {fileID: 5859450230110975972}
   m_Layer: 7
   m_Name: MetalIFX
   m_TagString: Untagged
@@ -4846,3 +4847,16 @@ ParticleSystemRenderer:
   m_MeshWeighting1: 1
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
+--- !u!114 &5859450230110975972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2049028494329797887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3b0ac865a17f83408dfa8e6039d0d1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ImpactEffect
+  duration: 1

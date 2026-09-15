@@ -2,10 +2,11 @@ using UnityEngine;
 
 public class WeaponController : MonoBehaviour
 {
+
+    [Header("References")]
     private WeaponState currentState = WeaponState.Ready;
     public WeaponState CurrentState => currentState;
 
-    [Header("References")]
     [SerializeField] private WeaponData weaponData;
     public WeaponData WeaponData => weaponData;
 
@@ -21,10 +22,6 @@ public class WeaponController : MonoBehaviour
     private WeaponHit lastHit;
     public WeaponHit LastHit => lastHit;
 
-    [Header("Timers")]
-    private float fireTimer;
-    private float reloadTimer;
-
     [Header("Debug")]
     [SerializeField] private bool showDebugInfo = true;
     public float FireTimer => fireTimer;
@@ -32,9 +29,17 @@ public class WeaponController : MonoBehaviour
     public bool ShowDebugRay = false;
     public float DebugRayDuration = 1f;
 
+    private float fireTimer;
+    private float reloadTimer;
+    private bool fireHeld;
+    private int burstShotsRemaining;
+    private WeaponRecoil weaponRecoil;
+    private BallisticRecoil ballisticRecoil;
+
     private void Awake()
     {
         weaponAmmo = GetComponent<WeaponAmmo>();
+        weaponRecoil = GetComponentInParent<WeaponRecoil>();
     }
 
     private void Update()
@@ -44,7 +49,21 @@ public class WeaponController : MonoBehaviour
             fireTimer -= Time.deltaTime;
 
             if (fireTimer <= 0f)
+            {
                 FinishFiring();
+
+                if (weaponData.fireMode == FireMode.Auto && fireHeld)
+                {
+                    TryFire();
+                }
+                else if (weaponData.fireMode == FireMode.Burst && burstShotsRemaining > 0)
+                {
+                    if (!TryFire())
+                    {
+                        burstShotsRemaining = 0;
+                    }
+                }
+            }
         }
 
         if (currentState == WeaponState.Reloading)
@@ -78,7 +97,22 @@ public class WeaponController : MonoBehaviour
 
     private Vector3 GetFireDirection(Vector3 aimPoint)
     {
-        return (aimPoint - firePoint.position).normalized;
+        Vector3 fireDirection =
+            (aimPoint - firePoint.position).normalized;
+
+        fireDirection =
+            Quaternion.AngleAxis(
+                -ballisticRecoil.vertical,
+                playerCamera.transform.right
+            ) * fireDirection;
+
+        fireDirection =
+            Quaternion.AngleAxis(
+                ballisticRecoil.horizontal,
+                playerCamera.transform.up
+            ) * fireDirection;
+
+        return fireDirection.normalized;
     }
 
     public void SetState(WeaponState newState)
@@ -89,6 +123,9 @@ public class WeaponController : MonoBehaviour
     public bool CanFire()
     {
         if (currentState != WeaponState.Ready)
+            return false;
+
+        if (fireTimer > 0f)
             return false;
 
         if (!weaponAmmo.HasAmmo())
@@ -105,6 +142,13 @@ public class WeaponController : MonoBehaviour
         if (!weaponAmmo.TryConsumeAmmo())
             return false;
 
+        ballisticRecoil = weaponRecoil.AddRecoil(weaponData.recoilVertical);
+
+        if (weaponData.fireMode == FireMode.Burst)
+        {
+            burstShotsRemaining--;
+        }
+
         lastHit = PerformHitscan();
 
         fireTimer = 1f / weaponData.fireRate;
@@ -114,9 +158,26 @@ public class WeaponController : MonoBehaviour
         return true;
     }
 
+    public void StartFiring()
+    {
+        fireHeld = true;
+
+        if (weaponData.fireMode == FireMode.Burst && currentState == WeaponState.Ready)
+        {
+            burstShotsRemaining = weaponData.burstCount;
+        }
+
+        TryFire();
+    }
+
     public void FinishFiring()
     {
         SetState(WeaponState.Ready);
+    }
+
+    public void StopFiring()
+    {
+        fireHeld = false;
     }
 
     public bool CanReload()
@@ -260,6 +321,8 @@ public class WeaponController : MonoBehaviour
             {
                 damageable.TakeDamage(weaponHit.Damage, weaponHit.HitZone);
             }
+
+            ImpactEffectLibrary.Instance.Spawn(weaponHit);
 
             if (ShowDebugRay)
             {
