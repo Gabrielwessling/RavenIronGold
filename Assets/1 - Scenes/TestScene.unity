@@ -267,7 +267,8 @@ GameObject:
   - component: {fileID: 43126778}
   - component: {fileID: 43126777}
   - component: {fileID: 43126776}
-  m_Layer: 8
+  - component: {fileID: 43126780}
+  m_Layer: 6
   m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -392,6 +393,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 43126774}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &43126780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 43126774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 840347e4a1ef37748a32bc56c0ff2f70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ImpactSurface
+  impactType: 5
 --- !u!1 &48833226
 GameObject:
   m_ObjectHideFlags: 0
@@ -401,7 +415,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 48833227}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Door (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -890,8 +904,46 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3620198592650432041, guid: 6fd18867812e6724d89ebfb5fab97411, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 147130933}
+    - targetCorrespondingSourceObject: {fileID: 3620198592650432041, guid: 6fd18867812e6724d89ebfb5fab97411, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 147130932}
   m_SourcePrefab: {fileID: 100100000, guid: 6fd18867812e6724d89ebfb5fab97411, type: 3}
+--- !u!1 &147130931 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3620198592650432041, guid: 6fd18867812e6724d89ebfb5fab97411, type: 3}
+  m_PrefabInstance: {fileID: 147130930}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &147130932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 147130931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58ba04982f172af47a9fb7734ba6022a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Health
+  maxHealth: 1
+  hitZoneMultipliers: []
+--- !u!114 &147130933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 147130931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 840347e4a1ef37748a32bc56c0ff2f70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ImpactSurface
+  impactType: 6
 --- !u!1 &154433683
 GameObject:
   m_ObjectHideFlags: 0
@@ -1211,7 +1263,8 @@ GameObject:
   - component: {fileID: 173083413}
   - component: {fileID: 173083412}
   - component: {fileID: 173083411}
-  m_Layer: 8
+  - component: {fileID: 173083415}
+  m_Layer: 6
   m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1336,6 +1389,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 173083409}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &173083415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 173083409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 840347e4a1ef37748a32bc56c0ff2f70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ImpactSurface
+  impactType: 5
 --- !u!1 &185690064
 GameObject:
   m_ObjectHideFlags: 0
@@ -1349,6 +1415,7 @@ GameObject:
   - component: {fileID: 185690067}
   - component: {fileID: 185690066}
   - component: {fileID: 185690069}
+  - component: {fileID: 185690070}
   m_Layer: 7
   m_Name: LLeg
   m_TagString: Untagged
@@ -1463,6 +1530,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HitZoneComponent
   hitZone: 3
   damageMultiplier: 1
+--- !u!114 &185690070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 185690064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 840347e4a1ef37748a32bc56c0ff2f70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ImpactSurface
+  impactType: 1
 --- !u!1001 &193219844
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1529,7 +1609,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 209366830}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Door (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1726,7 +1806,8 @@ GameObject:
   - component: {fileID: 232663067}
   - component: {fileID: 232663066}
   - component: {fileID: 232663065}
-  m_Layer: 8
+  - component: {fileID: 232663069}
+  m_Layer: 6
   m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1851,6 +1932,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 232663063}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &232663069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 232663063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 840347e4a1ef37748a32bc56c0ff2f70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ImpactSurface
+  impactType: 5
 --- !u!1 &234686803
 GameObject:
   m_ObjectHideFlags: 0
@@ -1860,7 +1954,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 234686804}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Door (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2389,6 +2483,7 @@ GameObject:
   - component: {fileID: 266135986}
   - component: {fileID: 266135985}
   - component: {fileID: 266135988}
+  - component: {fileID: 266135989}
   m_Layer: 7
   m_Name: LArm2Col
   m_TagString: Untagged
@@ -2503,6 +2598,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HitZoneComponent
   hitZone: 3
   damageMultiplier: 1
+--- !u!114 &266135989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 266135983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 840347e4a1ef37748a32bc56c0ff2f70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ImpactSurface
+  impactType: 1
 --- !u!1001 &275689453
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2652,13 +2760,34 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1735930720496160815, guid: 5639d78ca4018264c96026753ea108f1, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2084074054}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: -4100167564602095884, guid: 5639d78ca4018264c96026753ea108f1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 275689456}
   m_SourcePrefab: {fileID: 6019177894109046296, guid: 5639d78ca4018264c96026753ea108f1, type: 3}
 --- !u!4 &275689454 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1735930720496160815, guid: 5639d78ca4018264c96026753ea108f1, type: 3}
   m_PrefabInstance: {fileID: 275689453}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &275689455 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -4100167564602095884, guid: 5639d78ca4018264c96026753ea108f1, type: 3}
+  m_PrefabInstance: {fileID: 275689453}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &275689456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 275689455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 840347e4a1ef37748a32bc56c0ff2f70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ImpactSurface
+  impactType: 5
 --- !u!1 &304426802
 GameObject:
   m_ObjectHideFlags: 0
@@ -2805,7 +2934,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 319549848}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Door (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2841,7 +2970,8 @@ GameObject:
   - component: {fileID: 325140482}
   - component: {fileID: 325140481}
   - component: {fileID: 325140480}
-  m_Layer: 8
+  - component: {fileID: 325140484}
+  m_Layer: 6
   m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2966,6 +3096,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 325140478}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &325140484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 325140478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 840347e4a1ef37748a32bc56c0ff2f70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ImpactSurface
+  impactType: 5
 --- !u!1 &362004619
 GameObject:
   m_ObjectHideFlags: 0
@@ -2979,7 +3122,8 @@ GameObject:
   - component: {fileID: 362004622}
   - component: {fileID: 362004621}
   - component: {fileID: 362004624}
-  m_Layer: 8
+  - component: {fileID: 362004625}
+  m_Layer: 6
   m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3104,6 +3248,19 @@ MonoBehaviour:
   openPosition: {x: -8.4, y: 0, z: 25.49}
   openRotation: {x: 0, y: -90, z: 0}
   isOpen: 0
+--- !u!114 &362004625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 362004619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 840347e4a1ef37748a32bc56c0ff2f70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ImpactSurface
+  impactType: 5
 --- !u!1001 &366458035
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3159,8 +3316,46 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3620198592650432041, guid: 6fd18867812e6724d89ebfb5fab97411, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 366458038}
+    - targetCorrespondingSourceObject: {fileID: 3620198592650432041, guid: 6fd18867812e6724d89ebfb5fab97411, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 366458037}
   m_SourcePrefab: {fileID: 100100000, guid: 6fd18867812e6724d89ebfb5fab97411, type: 3}
+--- !u!1 &366458036 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3620198592650432041, guid: 6fd18867812e6724d89ebfb5fab97411, type: 3}
+  m_PrefabInstance: {fileID: 366458035}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &366458037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 366458036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58ba04982f172af47a9fb7734ba6022a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Health
+  maxHealth: 1
+  hitZoneMultipliers: []
+--- !u!114 &366458038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 366458036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 840347e4a1ef37748a32bc56c0ff2f70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ImpactSurface
+  impactType: 6
 --- !u!1 &411583318
 GameObject:
   m_ObjectHideFlags: 0
@@ -3456,7 +3651,8 @@ GameObject:
   - component: {fileID: 535946303}
   - component: {fileID: 535946302}
   - component: {fileID: 535946301}
-  m_Layer: 8
+  - component: {fileID: 535946305}
+  m_Layer: 6
   m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3581,6 +3777,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 535946299}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &535946305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 535946299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 840347e4a1ef37748a32bc56c0ff2f70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ImpactSurface
+  impactType: 5
 --- !u!1 &536802429
 GameObject:
   m_ObjectHideFlags: 0
@@ -3667,7 +3876,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 579665054}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Door (17)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4564,11 +4773,11 @@ PrefabInstance:
     - {fileID: 7850352042927495998, guid: 4c0b1a8fb67ea1245bc6b935a39f7b4a, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 4875001636889398977, guid: 4c0b1a8fb67ea1245bc6b935a39f7b4a, type: 3}
-      insertIndex: 0
-      addedObject: {fileID: 703523338}
-    - targetCorrespondingSourceObject: {fileID: 4875001636889398977, guid: 4c0b1a8fb67ea1245bc6b935a39f7b4a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 805792356}
+    - targetCorrespondingSourceObject: {fileID: 4875001636889398977, guid: 4c0b1a8fb67ea1245bc6b935a39f7b4a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1574261063}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c0b1a8fb67ea1245bc6b935a39f7b4a, type: 3}
 --- !u!114 &653126321 stripped
@@ -4815,7 +5024,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 794994746}
-  m_Layer: 8
+  - component: {fileID: 794994747}
+  - component: {fileID: 794994748}
+  m_Layer: 6
   m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4838,6 +5049,32 @@ Transform:
   - {fileID: 362004620}
   m_Father: {fileID: 275689454}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &794994747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 794994745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 840347e4a1ef37748a32bc56c0ff2f70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ImpactSurface
+  impactType: 5
+--- !u!114 &794994748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 794994745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 840347e4a1ef37748a32bc56c0ff2f70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ImpactSurface
+  impactType: 0
 --- !u!1 &805792355
 GameObject:
   m_ObjectHideFlags: 0
@@ -4984,6 +5221,7 @@ GameObject:
   - component: {fileID: 870153695}
   - component: {fileID: 870153694}
   - component: {fileID: 870153697}
+  - component: {fileID: 870153698}
   m_Layer: 7
   m_Name: HeadCol
   m_TagString: Untagged
@@ -5098,6 +5336,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HitZoneComponent
   hitZone: 1
   damageMultiplier: 1
+--- !u!114 &870153698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 870153692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 840347e4a1ef37748a32bc56c0ff2f70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ImpactSurface
+  impactType: 1
 --- !u!1 &891217062
 GameObject:
   m_ObjectHideFlags: 0
@@ -5362,8 +5613,46 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3620198592650432041, guid: 6fd18867812e6724d89ebfb5fab97411, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 895728826}
+    - targetCorrespondingSourceObject: {fileID: 3620198592650432041, guid: 6fd18867812e6724d89ebfb5fab97411, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 895728825}
   m_SourcePrefab: {fileID: 100100000, guid: 6fd18867812e6724d89ebfb5fab97411, type: 3}
+--- !u!1 &895728824 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3620198592650432041, guid: 6fd18867812e6724d89ebfb5fab97411, type: 3}
+  m_PrefabInstance: {fileID: 895728823}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &895728825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 895728824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58ba04982f172af47a9fb7734ba6022a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Health
+  maxHealth: 1
+  hitZoneMultipliers: []
+--- !u!114 &895728826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 895728824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 840347e4a1ef37748a32bc56c0ff2f70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ImpactSurface
+  impactType: 6
 --- !u!1 &914248105
 GameObject:
   m_ObjectHideFlags: 0
@@ -5906,7 +6195,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1063656406}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Door (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6744,7 +7033,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1132092998}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Door (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6779,6 +7068,7 @@ GameObject:
   - component: {fileID: 1143122250}
   - component: {fileID: 1143122249}
   - component: {fileID: 1143122248}
+  - component: {fileID: 1143122252}
   m_Layer: 8
   m_Name: Table
   m_TagString: Untagged
@@ -6879,6 +7169,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1143122252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1143122247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 840347e4a1ef37748a32bc56c0ff2f70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ImpactSurface
+  impactType: 5
 --- !u!1 &1148432801
 GameObject:
   m_ObjectHideFlags: 0
@@ -6892,6 +7195,7 @@ GameObject:
   - component: {fileID: 1148432804}
   - component: {fileID: 1148432803}
   - component: {fileID: 1148432806}
+  - component: {fileID: 1148432807}
   m_Layer: 7
   m_Name: BodyCol
   m_TagString: Untagged
@@ -7006,6 +7310,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HitZoneComponent
   hitZone: 2
   damageMultiplier: 1
+--- !u!114 &1148432807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1148432801}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 840347e4a1ef37748a32bc56c0ff2f70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ImpactSurface
+  impactType: 1
 --- !u!1 &1151622535
 GameObject:
   m_ObjectHideFlags: 0
@@ -7090,7 +7407,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1209901509}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Door (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7126,7 +7443,8 @@ GameObject:
   - component: {fileID: 1217883646}
   - component: {fileID: 1217883645}
   - component: {fileID: 1217883644}
-  m_Layer: 8
+  - component: {fileID: 1217883648}
+  m_Layer: 6
   m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7251,6 +7569,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1217883642}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1217883648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1217883642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 840347e4a1ef37748a32bc56c0ff2f70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ImpactSurface
+  impactType: 5
 --- !u!1 &1237371123
 GameObject:
   m_ObjectHideFlags: 0
@@ -7387,7 +7718,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1244586261}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Door (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7848,7 +8179,8 @@ GameObject:
   - component: {fileID: 1295255284}
   - component: {fileID: 1295255283}
   - component: {fileID: 1295255282}
-  m_Layer: 8
+  - component: {fileID: 1295255286}
+  m_Layer: 6
   m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7973,6 +8305,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1295255280}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1295255286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1295255280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 840347e4a1ef37748a32bc56c0ff2f70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ImpactSurface
+  impactType: 5
 --- !u!1001 &1295441400
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8041,6 +8386,7 @@ GameObject:
   - component: {fileID: 1302002067}
   - component: {fileID: 1302002066}
   - component: {fileID: 1302002065}
+  - component: {fileID: 1302002068}
   m_Layer: 8
   m_Name: Terrain
   m_TagString: Untagged
@@ -8124,6 +8470,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1302002068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1302002064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 840347e4a1ef37748a32bc56c0ff2f70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ImpactSurface
+  impactType: 4
 --- !u!1 &1303168653
 GameObject:
   m_ObjectHideFlags: 0
@@ -8928,7 +9287,8 @@ GameObject:
   - component: {fileID: 1329131795}
   - component: {fileID: 1329131794}
   - component: {fileID: 1329131793}
-  m_Layer: 8
+  - component: {fileID: 1329131797}
+  m_Layer: 6
   m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9053,6 +9413,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1329131791}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1329131797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1329131791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 840347e4a1ef37748a32bc56c0ff2f70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ImpactSurface
+  impactType: 5
 --- !u!1 &1338005981
 GameObject:
   m_ObjectHideFlags: 0
@@ -9270,8 +9643,46 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3620198592650432041, guid: 6fd18867812e6724d89ebfb5fab97411, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1359565400}
+    - targetCorrespondingSourceObject: {fileID: 3620198592650432041, guid: 6fd18867812e6724d89ebfb5fab97411, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1359565399}
   m_SourcePrefab: {fileID: 100100000, guid: 6fd18867812e6724d89ebfb5fab97411, type: 3}
+--- !u!1 &1359565398 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3620198592650432041, guid: 6fd18867812e6724d89ebfb5fab97411, type: 3}
+  m_PrefabInstance: {fileID: 1359565397}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1359565399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1359565398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58ba04982f172af47a9fb7734ba6022a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Health
+  maxHealth: 1
+  hitZoneMultipliers: []
+--- !u!114 &1359565400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1359565398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 840347e4a1ef37748a32bc56c0ff2f70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ImpactSurface
+  impactType: 6
 --- !u!1 &1365197447
 GameObject:
   m_ObjectHideFlags: 0
@@ -9600,7 +10011,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1482006571}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Door (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9767,7 +10178,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1516014413}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Door (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9803,7 +10214,8 @@ GameObject:
   - component: {fileID: 1516118454}
   - component: {fileID: 1516118453}
   - component: {fileID: 1516118452}
-  m_Layer: 8
+  - component: {fileID: 1516118456}
+  m_Layer: 6
   m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9928,6 +10340,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1516118450}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1516118456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1516118450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 840347e4a1ef37748a32bc56c0ff2f70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ImpactSurface
+  impactType: 5
 --- !u!1 &1525548118
 GameObject:
   m_ObjectHideFlags: 0
@@ -9941,7 +10366,8 @@ GameObject:
   - component: {fileID: 1525548122}
   - component: {fileID: 1525548121}
   - component: {fileID: 1525548120}
-  m_Layer: 8
+  - component: {fileID: 1525548124}
+  m_Layer: 6
   m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10066,6 +10492,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1525548118}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1525548124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1525548118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 840347e4a1ef37748a32bc56c0ff2f70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ImpactSurface
+  impactType: 5
 --- !u!1 &1529112198
 GameObject:
   m_ObjectHideFlags: 0
@@ -10079,6 +10518,7 @@ GameObject:
   - component: {fileID: 1529112201}
   - component: {fileID: 1529112200}
   - component: {fileID: 1529112203}
+  - component: {fileID: 1529112204}
   m_Layer: 7
   m_Name: RArm1Col
   m_TagString: Untagged
@@ -10193,6 +10633,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HitZoneComponent
   hitZone: 3
   damageMultiplier: 1
+--- !u!114 &1529112204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1529112198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 840347e4a1ef37748a32bc56c0ff2f70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ImpactSurface
+  impactType: 1
 --- !u!1 &1539906866
 GameObject:
   m_ObjectHideFlags: 0
@@ -10457,6 +10910,54 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!1 &1574261062
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1574261063}
+  - component: {fileID: 1574261064}
+  m_Layer: 0
+  m_Name: Weapon Root
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1574261063
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1574261062}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 703523338}
+  m_Father: {fileID: 1860180035}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1574261064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1574261062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2c42797ac110684a9c0c810ed432172, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WeaponRecoil
+  recoilTransform: {fileID: 1574261063}
+  recoilReturnSpeed: 7
+  recoilSnappiness: 15
 --- !u!1 &1589604891
 GameObject:
   m_ObjectHideFlags: 0
@@ -10470,6 +10971,7 @@ GameObject:
   - component: {fileID: 1589604894}
   - component: {fileID: 1589604893}
   - component: {fileID: 1589604896}
+  - component: {fileID: 1589604897}
   m_Layer: 7
   m_Name: RLeg
   m_TagString: Untagged
@@ -10584,6 +11086,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HitZoneComponent
   hitZone: 3
   damageMultiplier: 1
+--- !u!114 &1589604897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1589604891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 840347e4a1ef37748a32bc56c0ff2f70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ImpactSurface
+  impactType: 1
 --- !u!1 &1598023585
 GameObject:
   m_ObjectHideFlags: 0
@@ -10628,7 +11143,8 @@ GameObject:
   - component: {fileID: 1600812530}
   - component: {fileID: 1600812529}
   - component: {fileID: 1600812528}
-  m_Layer: 8
+  - component: {fileID: 1600812532}
+  m_Layer: 6
   m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10753,6 +11269,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1600812526}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1600812532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1600812526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 840347e4a1ef37748a32bc56c0ff2f70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ImpactSurface
+  impactType: 5
 --- !u!1 &1606148486
 GameObject:
   m_ObjectHideFlags: 0
@@ -11118,7 +11647,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1683415725}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Door (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11154,7 +11683,8 @@ GameObject:
   - component: {fileID: 1715258364}
   - component: {fileID: 1715258363}
   - component: {fileID: 1715258362}
-  m_Layer: 8
+  - component: {fileID: 1715258366}
+  m_Layer: 6
   m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11279,6 +11809,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1715258360}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1715258366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1715258360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 840347e4a1ef37748a32bc56c0ff2f70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ImpactSurface
+  impactType: 5
 --- !u!1 &1738226030
 GameObject:
   m_ObjectHideFlags: 0
@@ -11435,6 +11978,65 @@ MonoBehaviour:
   menuObject: {fileID: 749153794}
   playerController: {fileID: 653126321}
   pauseOnStart: 0
+--- !u!1 &1766493075
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1766493077}
+  - component: {fileID: 1766493076}
+  m_Layer: 0
+  m_Name: Impact Effect Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1766493076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1766493075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dff21db28528e5c43b5a78ed7e741b5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ImpactEffectLibrary
+  effects:
+  - impactType: 0
+    prefab: {fileID: 5078978737246807066, guid: 62aa889ab9acd9b44adfb645dfcf7947, type: 3}
+  - impactType: 1
+    prefab: {fileID: 8197956366076853112, guid: ff2e953482061034ea0e19f27ee7e3ce, type: 3}
+  - impactType: 2
+    prefab: {fileID: 2049028494329797887, guid: e6e0a639159c52f4388e827efcc59279, type: 3}
+  - impactType: 3
+    prefab: {fileID: 4163750507063946054, guid: 36aada646d604c34586c6914a3ccdbba, type: 3}
+  - impactType: 4
+    prefab: {fileID: 5573899540927486567, guid: ca896658309281c449c0316f49bb6705, type: 3}
+  - impactType: 5
+    prefab: {fileID: 48793623798584875, guid: dc7b6997e78f3a24f830a2a3dd73d960, type: 3}
+  - impactType: 6
+    prefab: {fileID: 6515485751523368570, guid: 3fb6d09b25c78d04893f0989fb5862af, type: 3}
+--- !u!4 &1766493077
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1766493075}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -9.90563, y: -5.93139, z: -4.15931}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1786056285
 GameObject:
   m_ObjectHideFlags: 0
@@ -11444,7 +12046,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1786056286}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Door (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11511,7 +12113,8 @@ GameObject:
   - component: {fileID: 1850158991}
   - component: {fileID: 1850158990}
   - component: {fileID: 1850158989}
-  m_Layer: 8
+  - component: {fileID: 1850158993}
+  m_Layer: 6
   m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11636,6 +12239,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1850158987}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1850158993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1850158987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 840347e4a1ef37748a32bc56c0ff2f70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ImpactSurface
+  impactType: 5
 --- !u!4 &1860180035 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4875001636889398977, guid: 4c0b1a8fb67ea1245bc6b935a39f7b4a, type: 3}
@@ -11655,7 +12271,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1862483098}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Door (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11869,7 +12485,8 @@ GameObject:
   - component: {fileID: 1872260774}
   - component: {fileID: 1872260773}
   - component: {fileID: 1872260772}
-  m_Layer: 8
+  - component: {fileID: 1872260776}
+  m_Layer: 6
   m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11994,6 +12611,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1872260770}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1872260776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1872260770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 840347e4a1ef37748a32bc56c0ff2f70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ImpactSurface
+  impactType: 5
 --- !u!1 &1874705501
 GameObject:
   m_ObjectHideFlags: 0
@@ -12003,7 +12633,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1874705502}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Door (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12414,7 +13044,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1972114366}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Door (16)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12507,7 +13137,8 @@ GameObject:
   - component: {fileID: 1997033278}
   - component: {fileID: 1997033277}
   - component: {fileID: 1997033276}
-  m_Layer: 8
+  - component: {fileID: 1997033280}
+  m_Layer: 6
   m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12632,6 +13263,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1997033274}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1997033280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1997033274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 840347e4a1ef37748a32bc56c0ff2f70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ImpactSurface
+  impactType: 5
 --- !u!1001 &2018298141
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12687,8 +13331,46 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3620198592650432041, guid: 6fd18867812e6724d89ebfb5fab97411, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2018298144}
+    - targetCorrespondingSourceObject: {fileID: 3620198592650432041, guid: 6fd18867812e6724d89ebfb5fab97411, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2018298143}
   m_SourcePrefab: {fileID: 100100000, guid: 6fd18867812e6724d89ebfb5fab97411, type: 3}
+--- !u!1 &2018298142 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3620198592650432041, guid: 6fd18867812e6724d89ebfb5fab97411, type: 3}
+  m_PrefabInstance: {fileID: 2018298141}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2018298143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2018298142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58ba04982f172af47a9fb7734ba6022a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Health
+  maxHealth: 1
+  hitZoneMultipliers: []
+--- !u!114 &2018298144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2018298142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 840347e4a1ef37748a32bc56c0ff2f70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ImpactSurface
+  impactType: 6
 --- !u!1 &2018438714
 GameObject:
   m_ObjectHideFlags: 0
@@ -13043,7 +13725,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2084074054}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Door (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13212,7 +13894,8 @@ GameObject:
   - component: {fileID: 2120578692}
   - component: {fileID: 2120578691}
   - component: {fileID: 2120578690}
-  m_Layer: 8
+  - component: {fileID: 2120578694}
+  m_Layer: 6
   m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13337,6 +14020,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2120578688}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &2120578694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2120578688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 840347e4a1ef37748a32bc56c0ff2f70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ImpactSurface
+  impactType: 5
 --- !u!1 &2122394373
 GameObject:
   m_ObjectHideFlags: 0
@@ -13350,6 +14046,7 @@ GameObject:
   - component: {fileID: 2122394376}
   - component: {fileID: 2122394375}
   - component: {fileID: 2122394378}
+  - component: {fileID: 2122394379}
   m_Layer: 7
   m_Name: LArm1Col
   m_TagString: Untagged
@@ -13464,6 +14161,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HitZoneComponent
   hitZone: 3
   damageMultiplier: 1
+--- !u!114 &2122394379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2122394373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 840347e4a1ef37748a32bc56c0ff2f70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ImpactSurface
+  impactType: 1
 --- !u!1 &2125393122
 GameObject:
   m_ObjectHideFlags: 0
@@ -13477,6 +14187,7 @@ GameObject:
   - component: {fileID: 2125393125}
   - component: {fileID: 2125393124}
   - component: {fileID: 2125393127}
+  - component: {fileID: 2125393128}
   m_Layer: 7
   m_Name: RArm2Col
   m_TagString: Untagged
@@ -13591,6 +14302,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HitZoneComponent
   hitZone: 3
   damageMultiplier: 1
+--- !u!114 &2125393128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2125393122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 840347e4a1ef37748a32bc56c0ff2f70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ImpactSurface
+  impactType: 1
 --- !u!1 &2136739160
 GameObject:
   m_ObjectHideFlags: 0
@@ -13692,7 +14416,8 @@ GameObject:
   - component: {fileID: 2146565097}
   - component: {fileID: 2146565096}
   - component: {fileID: 2146565095}
-  m_Layer: 8
+  - component: {fileID: 2146565099}
+  m_Layer: 6
   m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13817,6 +14542,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2146565093}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &2146565099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2146565093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 840347e4a1ef37748a32bc56c0ff2f70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ImpactSurface
+  impactType: 5
 --- !u!1001 &2492309202086988503
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13872,8 +14610,46 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3620198592650432041, guid: 6fd18867812e6724d89ebfb5fab97411, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2492309202086988506}
+    - targetCorrespondingSourceObject: {fileID: 3620198592650432041, guid: 6fd18867812e6724d89ebfb5fab97411, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2492309202086988505}
   m_SourcePrefab: {fileID: 100100000, guid: 6fd18867812e6724d89ebfb5fab97411, type: 3}
+--- !u!1 &2492309202086988504 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3620198592650432041, guid: 6fd18867812e6724d89ebfb5fab97411, type: 3}
+  m_PrefabInstance: {fileID: 2492309202086988503}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2492309202086988505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2492309202086988504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58ba04982f172af47a9fb7734ba6022a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Health
+  maxHealth: 1
+  hitZoneMultipliers: []
+--- !u!114 &2492309202086988506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2492309202086988504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 840347e4a1ef37748a32bc56c0ff2f70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ImpactSurface
+  impactType: 6
 --- !u!1001 &6998553113183067416
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13937,7 +14713,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1860180035}
+    m_TransformParent: {fileID: 1574261063}
     m_Modifications:
     - target: {fileID: 920011718513899075, guid: 02497354c0b38df4b9dc105f837172d5, type: 3}
       propertyPath: m_LocalScale.x
@@ -14017,7 +14793,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2379830621349351756, guid: 02497354c0b38df4b9dc105f837172d5, type: 3}
       propertyPath: m_Name
-      value: Weapon
+      value: N66
       objectReference: {fileID: 0}
     - target: {fileID: 2379830621349351756, guid: 02497354c0b38df4b9dc105f837172d5, type: 3}
       propertyPath: m_Layer
@@ -14072,6 +14848,7 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1841714146}
+  - {fileID: 1766493077}
   - {fileID: 1373949421}
   - {fileID: 1068303138}
   - {fileID: 1338005983}

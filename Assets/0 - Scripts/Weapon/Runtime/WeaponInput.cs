@@ -20,6 +20,8 @@ public class WeaponInput : MonoBehaviour
 
         reloadAction.action.Enable();
         reloadAction.action.performed += OnReload;
+
+        fireAction.action.canceled += OnFireCanceled;
     }
 
     private void OnDisable()
@@ -29,15 +31,22 @@ public class WeaponInput : MonoBehaviour
 
         reloadAction.action.performed -= OnReload;
         reloadAction.action.Disable();
+
+        fireAction.action.canceled -= OnFireCanceled;
     }
 
     private void OnFire(InputAction.CallbackContext context)
     {
-        weaponController.TryFire();
+        weaponController.StartFiring();
     }
 
     private void OnReload(InputAction.CallbackContext context)
     {
         weaponController.TryReload();
+    }
+
+    private void OnFireCanceled(InputAction.CallbackContext context)
+    {
+        weaponController.StopFiring();
     }
 }

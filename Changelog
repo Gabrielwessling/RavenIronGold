@@ -4,6 +4,15 @@
     End each version section with a `Commit message:` line describing the commit.
 
 ## Changelog
+Version 0.0.6
+
+- Added material-specific impact effect data and a shared impact-effect library that spawns the correct prefab for each detected surface type.
+- Added recoil behavior to the weapon rig with damped recovery, vertical and horizontal kick, and backward camera/weapon offset response tied to weapon fire.
+- Updated the weapon controller and weapon data to support recoil-driven aim drift, surface-specific impact handling, and cleaner hit-resolution flow for ranged shots.
+- Refined the current test scene and weapon asset setup to incorporate the impact-effect prefabs and latest weapon tuning values.
+
+Commit message: Add recoil and impact effect feedback
+
 Version 0.0.5
 
 - Added impact and hit-zone data models for weapon hits, including an enum-driven impact type list and object/zone metadata to describe the target surface and region.

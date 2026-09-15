@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7971950020117349307}
   - component: {fileID: 6598215980678995967}
   - component: {fileID: 4684841176444648250}
+  - component: {fileID: -2227600354959709784}
   m_Layer: 7
   m_Name: GlassIFX
   m_TagString: Untagged
@@ -4846,3 +4847,16 @@ ParticleSystemRenderer:
   m_MeshWeighting1: 1
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
+--- !u!114 &-2227600354959709784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6515485751523368570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3b0ac865a17f83408dfa8e6039d0d1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ImpactEffect
+  duration: 1
